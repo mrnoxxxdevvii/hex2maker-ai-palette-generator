@@ -146,6 +146,8 @@ MIT. See [LICENSE](LICENSE).
 
 ## Thanks
 
-If Hex2Maker is useful to you, a star on the repository is a nice way to say thanks. It helps other people find the project, and it makes maintaining it worth the time.
+Hex2Maker is free, open source, and has no catch. If it saved you some time, a star on the repository is a simple way to say thanks. It helps other people find the project, and it makes the time spent on it worthwhile.
+
+<img width="486" height="243" alt="screen" src="https://github.com/user-attachments/assets/9ff9c0a0-e5b9-48ec-81ad-ec3eb3666a3c" />
 
 Built by [Mr. Nox](https://github.com/mrnoxxxdevvii).
