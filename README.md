@@ -7,7 +7,7 @@ Hex2Maker is a client-side color palette generator for people who know what they
 No account, no backend, no telemetry. Close the tab and nothing is left behind except the palette in your clipboard.
 
 ![Hex2Maker interface showing a dark ruby community forum palette](docs/screenshot.png)
-*A dark ruby palette for a community forum, generated from the brief on the left.*
+A dark ruby palette for a community forum, generated from the brief on the left.
 ---
 <img width="1440" height="1000" alt="screen1" src="https://github.com/user-attachments/assets/bf82bbce-6e50-428a-b9e0-a6e65e5da9a4" />
 ---
