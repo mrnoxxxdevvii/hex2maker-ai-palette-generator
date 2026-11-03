@@ -1,0 +1,208 @@
+@import 'tailwindcss';
+
+@theme {
+  --font-sans:
+    -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif;
+  --font-mono:
+    ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace;
+
+  --color-canvas: #1e2530;
+  --color-panel: #242c38;
+  --color-inset: #1a212b;
+  --color-line: #3a4452;
+  --color-line-soft: #2f3946;
+  --color-ink: #e6edf3;
+  --color-ink-muted: #9da7b5;
+  --color-ink-subtle: #7a8593;
+  --color-link: #58a6ff;
+  --color-success: #3fb950;
+  --color-danger: #f85149;
+  --color-warning: #d29922;
+}
+
+:root {
+  color-scheme: dark;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  background-color: #1e2530;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background-color: #1e2530;
+  color: #e6edf3;
+  font-family: var(--font-sans);
+}
+
+::selection {
+  background-color: rgb(88 166 255 / 0.32);
+  color: #f0f6fc;
+}
+
+:focus-visible {
+  outline: 2px solid #58a6ff;
+  outline-offset: 2px;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button:not(:disabled),
+[role='button']:not(:disabled) {
+  cursor: pointer;
+}
+
+select.field option {
+  background-color: #1a212b;
+  color: #e6edf3;
+}
+
+@layer components {
+  .field {
+    border: 1px solid var(--color-line);
+    border-radius: 6px;
+    background-color: var(--color-inset);
+    color: var(--color-ink);
+    padding: 0.5rem 0.625rem;
+    font-size: 0.875rem;
+    transition:
+      border-color 120ms ease,
+      box-shadow 120ms ease;
+  }
+
+  .field::placeholder {
+    color: var(--color-ink-subtle);
+    opacity: 0.85;
+  }
+
+  .field:hover:not(:focus) {
+    border-color: #4a5566;
+  }
+
+  .field:focus {
+    outline: none;
+    border-color: var(--color-link);
+    box-shadow: 0 0 0 3px rgb(88 166 255 / 0.16);
+  }
+
+  .field:focus-visible {
+    outline: none;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.375rem;
+    height: 2.25rem;
+    padding: 0 0.875rem;
+    border: 1px solid transparent;
+    border-radius: 6px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    line-height: 1;
+    white-space: nowrap;
+    transition:
+      background-color 120ms ease,
+      border-color 120ms ease,
+      color 120ms ease;
+  }
+
+  .btn:disabled {
+    cursor: not-allowed;
+    opacity: 0.55;
+  }
+
+  .btn-primary {
+    border-color: #f0f6fc;
+    background-color: #f0f6fc;
+    color: #0d1117;
+  }
+
+  .btn-primary:hover:not(:disabled) {
+    border-color: #ffffff;
+    background-color: #ffffff;
+  }
+
+  .btn-primary:active:not(:disabled) {
+    border-color: #d8dee4;
+    background-color: #d8dee4;
+  }
+
+  .btn-secondary {
+    border-color: #414c5c;
+    background-color: #2c3542;
+    color: #e6edf3;
+  }
+
+  .btn-secondary:hover:not(:disabled) {
+    border-color: #4d5969;
+    background-color: #35404e;
+  }
+
+  .btn-ghost {
+    border-color: transparent;
+    background-color: transparent;
+    color: #9da7b5;
+  }
+
+  .btn-ghost:hover:not(:disabled) {
+    background-color: #2a3340;
+    color: #e6edf3;
+  }
+}
+
+.color-swatch {
+  position: relative;
+  width: 2rem;
+  height: 2rem;
+  flex: none;
+  overflow: hidden;
+  border: 1px solid #566273;
+  border-radius: 4px;
+  background-color: #1a212b;
+}
+
+.color-swatch:hover {
+  border-color: #6e7a8a;
+}
+
+.color-swatch:focus-within {
+  outline: 2px solid #58a6ff;
+  outline-offset: 2px;
+}
+
+@keyframes toast-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.toast-item {
+  animation: toast-in 160ms ease-out both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
